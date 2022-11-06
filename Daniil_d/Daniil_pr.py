@@ -1,3 +1,5 @@
+from easygui import *
+
 class Human():
     def __init__(self,name,sn,age,h,ey,heirs):
         self.name = name
@@ -7,7 +9,16 @@ class Human():
         self.eye = ey
         self.heirs = heirs
     def getInfo(self):
-        print(self.name, self.surname, self.age, self.height, self.eye, self.heirs)
+        msgbox(f'''
+         name: {self.name}
+         surname: {self.surname}
+         age: {self.age} 
+         height: {self.height} 
+         eye: {self.eye} nn
+         heirs: {self.heirs}
+         ''')
 
-man = Human(input(),input(),input(),input(),input(),input())
+
+
+man = Human(enterbox('введите имя'),enterbox('введите фамилию'),enterbox('введите возраст'),enterbox('введите рост'),enterbox('введите цвет глаз'),enterbox('введите цвет волос'))
 man.getInfo()
